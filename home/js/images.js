@@ -2,13 +2,13 @@ const app2 = Vue.createApp({
   data() {
     return {
       manyFoods: [
-        '../images/img_burrito.svg',
-        '../images/img_salad.svg',
-        '../images/img_cake.svg',
-        '../images/img_soup.svg',
-        '../images/img_fish.svg',
-        '../images/img_pizza.svg',
-        '../images/img_rice.svg'
+        'https://www.w3schools.com/vue/img_burrito.svg',
+        'https://www.w3schools.com/vue/img_salad.svg',
+        'https://www.w3schools.com/vue/img_cake.svg',
+        'https://www.w3schools.com/vue/img_soup.svg',
+        'https://www.w3schools.com/vue/img_fish.svg',
+        'https://www.w3schools.com/vue/img_pizza.svg',
+        'https://www.w3schools.com/vue/img_rice.svg'
       ]
     }
   }
