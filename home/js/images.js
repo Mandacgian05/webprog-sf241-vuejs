@@ -2,16 +2,16 @@ const app2 = Vue.createApp({
   data() {
     return {
       manyFoods: [
-        'img_burrito.svg',
-        'img_salad.svg',
-        'img_cake.svg',
-        'img_soup.svg',
-        'img_fish.svg',
-        'img_pizza.svg',
-        'img_rice.svg'
+        '../images/img_burrito.svg',
+        '../images/img_salad.svg',
+        '../images/img_cake.svg',
+        '../images/img_soup.svg',
+        '../images/img_fish.svg',
+        '../images/img_pizza.svg',
+        '../images/img_rice.svg'
       ]
     }
   }
 })
 
-app2.mount('#app2') 
+app2.mount('#app2')
