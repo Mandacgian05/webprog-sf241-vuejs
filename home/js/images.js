@@ -1,6 +1,5 @@
-
-  const app2 = Vue.createApp({
-   data() {
+const app2 = Vue.createApp({
+  data() {
     return {
       manyFoods: [
         'img_burrito.svg',
@@ -12,8 +11,7 @@
         'img_rice.svg'
       ]
     }
-   }
-  })
-  
-  app.mount('#app2')
+  }
+})
 
+app2.mount('#app2') 
