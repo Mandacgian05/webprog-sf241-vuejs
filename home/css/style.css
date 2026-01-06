@@ -221,5 +221,54 @@ body {
     align-self: start;
   }
 }
+/* NAVIGATION BAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #1f2933;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+/* Logo / Name */
+.nav-logo {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Nav links container */
+.nav-links {
+  list-style: none;
+  display: flex;          /* FLEXBOX */
+  gap: 20px;
+}
+
+/* Individual links */
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #60a5fa;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 
