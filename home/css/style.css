@@ -22,3 +22,121 @@
   transform: translateY(-8px);
   box-shadow: 0 14px 30px rgba(0,0,0,0.15);
 }
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background-color: grey;
+}
+
+/* Generic box style */
+.container div,
+.box {
+    background-color: #D3D3D3;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 300px;
+}
+
+/* Image wrapper */
+.item {
+    flex: 1 1 250px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Images */
+.item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Responsive Text */
+.container * {
+    font-size: clamp(14px, 2vw, 20px);
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;       /* allows wrapping into new rows */
+    gap: 20px;             /* ← THIS CREATES SPACE BETWEEN BOXES */
+    padding: 20px;
+    background: grey;
+}
+
+.item {
+    background: #D3D3D3;
+    padding: 20px;
+    border-radius: 10px;
+    list-style: none;
+    flex: 1 1 200px;       /* responsive width */
+
+    /* ensures text wraps safely */
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+/* Mobile devices */
+@media (max-width: 600px) {
+    .tabs {
+        width: 100%;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .buttons button {
+        padding: 12px 15px;
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        margin-bottom: 8px;
+    }
+
+    .content .inner h1 {
+        font-size: 24px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    ul.container li {
+        font-size: 14px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .buttons button {
+        padding: 14px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 901px) {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 15px;
+    }
+}
+
