@@ -1,45 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>My first Vue page</title>
+
   <link rel="stylesheet" href="css/style.css?version=0.1">
   <link rel="stylesheet" href="css/flexbox-grid.css">
   <link rel="stylesheet" href="css/images.css">
 </head>
 <body>
 
-    <div class="container">
-        <header> <h1>Personal Profile Web page  - Gian Mandac</h1>  </header>
-        <main>
-          <section class="main-content">
-            <div>1 About Me</div>
-            <div>2 Education / Achievements</div>
-            <div>3 Course </div>  
-            <div>4 IT Experience</div>
-            <div>5 Hobbies & Interests</div>
-            <div>6 Goals In Life / Dream</div>  
-            <div>7 Picture Gallery</div>
-          </section>
-          <aside class="sidebar">
-            </aside>
-        </main>
-        <footer> Asia Pacific College   </footer>
-    </div>
+<div class="container">
+  <header>
+    <h1>Personal Profile Web Page - Gian Mandac</h1>
+  </header>
 
+  <main>
+    <section class="main-content">
 
+      <div>
+        <h2>1. About Me</h2>
+        <p>
+          I am Gian Mandac, an IT student passionate about programming, game development,
+          and cybersecurity. I enjoy learning new technologies and applying them through projects.
+        </p>
+      </div>
+
+      <div>
+        <h2>2. Education / Achievements</h2>
+        <p>
+          Currently studying Information Technology at Asia Pacific College.
+          I have completed multiple programming and database-related projects.
+        </p>
+      </div>
+
+      <div>
+        <h2>3. Course</h2>
+        <p>
+          Bachelor of Science in Information Technology with a focus on software
+          development and systems security.
+        </p>
+      </div>
+
+      <div>
+        <h2>4. IT Experience</h2>
+        <p>
+          Experience with HTML, CSS, JavaScript, Vue.js, Python, C++, SQL,
+          and game development using Godot.
+        </p>
+      </div>
+
+      <div>
+        <h2>5. Hobbies & Interests</h2>
+        <p>
+          Coding, jogging, nature trips, drawing, and creating 2D games.
+        </p>
+      </div>
+
+      <div>
+        <h2>6. Goals In Life / Dream</h2>
+        <p>
+          To become a skilled software developer and game designer,
+          and to work on meaningful and innovative tech projects.
+        </p>
+      </div>
+
+      <div>
+        <h2>7. Picture Gallery</h2>
+        <!-- Vue image gallery remains -->
+        <div id="app2">
+          <img v-for="x in manyFoods" :src="x" :key="x">
+        </div>
+      </div>
+
+    </section>
+
+    <aside class="sidebar">
+      <h3>Quick Info</h3>
+      <p>Student | Developer | Gamer</p>
+    </aside>
+  </main>
+
+  <footer>
+    Asia Pacific College
+  </footer>
+</div>
+
+<!-- Vue message section (original retained) -->
 <div id="app">
-  {{ message }}
+  <p>{{ message }}</p>
 </div>
 
-<div id="app2">
-
-  <div>
-    <img v-for="x in manyFoods" v-bind:src="x">
-  </div>
-
-</div>
-
+<!-- Vue CDN -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- Your original JS files -->
 <script src="js/vue.js"></script>
 <script src="js/images.js"></script>
 
