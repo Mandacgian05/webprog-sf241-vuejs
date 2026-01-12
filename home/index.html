@@ -2,17 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My first Vue page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gian Mandac - Personal Portfolio</title>
 
-  <link rel="stylesheet" href="css/style.css?version=0.1">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?version=0.2">
   <link rel="stylesheet" href="css/flexbox-grid.css">
   <link rel="stylesheet" href="css/images.css">
+
+  <!-- Google Fonts for a modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Source+Code+Pro:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* Quick professional upgrade */
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f6fa;
+      color: #2f3640;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #273c75;
+      color: #ffffff;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .main-content {
+      flex: 3;
+      padding-right: 2rem;
+    }
+
+    .main-content > div {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .main-content > div:hover {
+      transform: translateY(-3px);
+    }
+
+    .main-content h2 {
+      color: #273c75;
+      margin-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+
+    aside.sidebar {
+      flex: 1;
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      height: fit-content;
+      margin-bottom: 1.5rem;
+    }
+
+    aside.sidebar h3 {
+      margin-top: 0;
+      color: #273c75;
+      font-size: 1.25rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #273c75;
+      color: #ffffff;
+      margin-top: 2rem;
+    }
+
+    /* Image gallery */
+    #app2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    #app2 img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    #app2 img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Vue message styling */
+    #app p {
+      font-family: 'Source Code Pro', monospace;
+      background-color: #dcdde1;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 600px;
+      margin: 2rem auto;
+      color: #2f3640;
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+      }
+
+      .main-content {
+        padding-right: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <div class="container">
   <header>
-    <h1>Personal Profile Web Page - Gian Mandac</h1>
+    <h1>Gian Mandac - Personal Portfolio</h1>
   </header>
 
   <main>
@@ -67,7 +201,6 @@
 
       <div>
         <h2>7. Picture Gallery</h2>
-        <!-- Vue image gallery remains -->
         <div id="app2">
           <img v-for="x in manyFoods" :src="x" :key="x">
         </div>
@@ -86,7 +219,6 @@
   </footer>
 </div>
 
-<!-- Vue message section (original retained) -->
 <div id="app">
   <p>{{ message }}</p>
 </div>
