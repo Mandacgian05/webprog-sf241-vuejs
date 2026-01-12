@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>My first Vue page</title>
 
-  <!-- EMBEDDED CSS (Already Included) -->
   <style>
     * {
       margin: 0;
@@ -41,7 +40,6 @@
 
     header h1 {
       font-size: 28px;
-      letter-spacing: 1px;
     }
 
     main {
@@ -53,7 +51,6 @@
     .main-content {
       flex: 3;
       display: grid;
-      grid-template-columns: 1fr;
       gap: 15px;
     }
 
@@ -61,22 +58,16 @@
       background: rgba(255, 255, 255, 0.08);
       padding: 20px;
       border-radius: 10px;
-      transition: transform 0.3s ease, background 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .main-content div:hover {
       transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.15);
     }
 
     .main-content h2 {
       color: #99f2c8;
       margin-bottom: 8px;
-    }
-
-    .main-content p {
-      line-height: 1.6;
-      font-size: 15px;
     }
 
     .sidebar {
@@ -86,16 +77,10 @@
       border-radius: 10px;
     }
 
-    .sidebar h3 {
-      color: #99f2c8;
-      margin-bottom: 10px;
-    }
-
     footer {
       text-align: center;
       padding: 15px;
       background: #111;
-      font-size: 14px;
     }
 
     #app {
@@ -129,87 +114,94 @@
 
 <body>
 
-<div class="container">
-  <header>
-    <h1>Personal Profile Web Page - Gian Mandac</h1>
-  </header>
+<!-- SINGLE VUE ROOT -->
+<div id="vue-root">
 
-  <main>
-    <section class="main-content">
+  <div class="container">
+    <header>
+      <h1>Personal Profile Web Page - Gian Mandac</h1>
+    </header>
 
-      <div>
-        <h2>1. About Me</h2>
-        <p>
-          I am Gian Mandac, an IT student passionate about programming,
-          game development, and cybersecurity.
-        </p>
-      </div>
+    <main>
+      <section class="main-content">
 
-      <div>
-        <h2>2. Education / Achievements</h2>
-        <p>
-          Asia Pacific College – Bachelor of Science in Information Technology.
-        </p>
-      </div>
-
-      <div>
-        <h2>3. Course</h2>
-        <p>
-          BSIT focused on software development and system security.
-        </p>
-      </div>
-
-      <div>
-        <h2>4. IT Experience</h2>
-        <p>
-          HTML, CSS, JavaScript, Vue.js, Python, C++, SQL, Godot Engine.
-        </p>
-      </div>
-
-      <div>
-        <h2>5. Hobbies & Interests</h2>
-        <p>
-          Coding, jogging, drawing, nature trips, and game development.
-        </p>
-      </div>
-
-      <div>
-        <h2>6. Goals In Life / Dream</h2>
-        <p>
-          To become a professional software and game developer.
-        </p>
-      </div>
-
-      <div>
-        <h2>7. Picture Gallery</h2>
-        <div id="app2">
-          <img v-for="x in manyFoods" :src="x" :key="x">
+        <div>
+          <h2>1. About Me</h2>
+          <p>I am Gian Mandac, an IT student passionate about programming and game development.</p>
         </div>
-      </div>
 
-    </section>
+        <div>
+          <h2>2. Education / Achievements</h2>
+          <p>Asia Pacific College – BS in Information Technology.</p>
+        </div>
 
-    <aside class="sidebar">
-      <h3>Quick Info</h3>
-      <p>IT Student</p>
-      <p>Developer</p>
-      <p>Asia Pacific College</p>
-    </aside>
-  </main>
+        <div>
+          <h2>3. Course</h2>
+          <p>Bachelor of Science in Information Technology.</p>
+        </div>
 
-  <footer>
-    Asia Pacific College
-  </footer>
+        <div>
+          <h2>4. IT Experience</h2>
+          <p>HTML, CSS, JavaScript, Vue.js, Python, C++, SQL, Godot.</p>
+        </div>
+
+        <div>
+          <h2>5. Hobbies & Interests</h2>
+          <p>Coding, jogging, drawing, nature trips, and gaming.</p>
+        </div>
+
+        <div>
+          <h2>6. Goals In Life / Dream</h2>
+          <p>To become a professional software and game developer.</p>
+        </div>
+
+        <div>
+          <h2>7. Picture Gallery</h2>
+          <div id="app2">
+            <img v-for="img in manyFoods" :src="img" :key="img">
+          </div>
+        </div>
+
+      </section>
+
+      <aside class="sidebar">
+        <h3>Quick Info</h3>
+        <p>IT Student</p>
+        <p>Developer</p>
+        <p>Asia Pacific College</p>
+      </aside>
+    </main>
+
+    <footer>
+      Asia Pacific College
+    </footer>
+  </div>
+
+  <div id="app">
+    {{ message }}
+  </div>
+
 </div>
 
-<div id="app">
-  {{ message }}
-</div>
-
-
+<!-- VUE CDN -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-
+<!-- VUE LOGIC -->
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: "Welcome to my personal website!",
+        manyFoods: [
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=500&q=60",
+          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=60"
+        ]
+      };
+    }
+  }).mount("#vue-root");
+</script>
 
 </body>
 </html>
