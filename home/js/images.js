@@ -1,4 +1,4 @@
-<script>
+
   const app = Vue.createApp({
     data() {
       return {
@@ -15,4 +15,5 @@
 
   app.mount("#app");
   app.mount("#app2"); // SAME app, not a second app
-</script>
+
+
