@@ -4,10 +4,129 @@
   <meta charset="UTF-8">
   <title>My first Vue page</title>
 
-  <link rel="stylesheet" href="css/style.css?version=0.1">
-  <link rel="stylesheet" href="css/flexbox-grid.css">
-  <link rel="stylesheet" href="css/images.css">
+  <!-- EMBEDDED CSS (Already Included) -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(
+          rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.55)
+        ),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475")
+        no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      background: rgba(20, 20, 20, 0.85);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    header {
+      background: linear-gradient(135deg, #1f4037, #99f2c8);
+      padding: 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .main-content {
+      flex: 3;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .main-content div {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .main-content div:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .main-content h2 {
+      color: #99f2c8;
+      margin-bottom: 8px;
+    }
+
+    .main-content p {
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .sidebar h3 {
+      color: #99f2c8;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      font-size: 14px;
+    }
+
+    #app {
+      text-align: center;
+      margin: 20px;
+      font-size: 18px;
+      color: #99f2c8;
+    }
+
+    #app2 {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    #app2 img {
+      width: 150px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #99f2c8;
+      transition: transform 0.3s ease;
+    }
+
+    #app2 img:hover {
+      transform: scale(1.08);
+    }
+  </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -21,53 +140,48 @@
       <div>
         <h2>1. About Me</h2>
         <p>
-          I am Gian Mandac, an IT student passionate about programming, game development,
-          and cybersecurity. I enjoy learning new technologies and applying them through projects.
+          I am Gian Mandac, an IT student passionate about programming,
+          game development, and cybersecurity.
         </p>
       </div>
 
       <div>
         <h2>2. Education / Achievements</h2>
         <p>
-          Currently studying Information Technology at Asia Pacific College.
-          I have completed multiple programming and database-related projects.
+          Asia Pacific College – Bachelor of Science in Information Technology.
         </p>
       </div>
 
       <div>
         <h2>3. Course</h2>
         <p>
-          Bachelor of Science in Information Technology with a focus on software
-          development and systems security.
+          BSIT focused on software development and system security.
         </p>
       </div>
 
       <div>
         <h2>4. IT Experience</h2>
         <p>
-          Experience with HTML, CSS, JavaScript, Vue.js, Python, C++, SQL,
-          and game development using Godot.
+          HTML, CSS, JavaScript, Vue.js, Python, C++, SQL, Godot Engine.
         </p>
       </div>
 
       <div>
         <h2>5. Hobbies & Interests</h2>
         <p>
-          Coding, jogging, nature trips, drawing, and creating 2D games.
+          Coding, jogging, drawing, nature trips, and game development.
         </p>
       </div>
 
       <div>
         <h2>6. Goals In Life / Dream</h2>
         <p>
-          To become a skilled software developer and game designer,
-          and to work on meaningful and innovative tech projects.
+          To become a professional software and game developer.
         </p>
       </div>
 
       <div>
         <h2>7. Picture Gallery</h2>
-        <!-- Vue image gallery remains -->
         <div id="app2">
           <img v-for="x in manyFoods" :src="x" :key="x">
         </div>
@@ -77,7 +191,9 @@
 
     <aside class="sidebar">
       <h3>Quick Info</h3>
-      <p>Student | Developer | Gamer</p>
+      <p>IT Student</p>
+      <p>Developer</p>
+      <p>Asia Pacific College</p>
     </aside>
   </main>
 
@@ -86,17 +202,36 @@
   </footer>
 </div>
 
-<!-- Vue message section (original retained) -->
 <div id="app">
-  <p>{{ message }}</p>
+  {{ message }}
 </div>
 
-<!-- Vue CDN -->
+<!-- VUE CDN -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<!-- Your original JS files -->
-<script src="js/vue.js"></script>
-<script src="js/images.js"></script>
+<!-- VUE APPS -->
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: "Welcome to my personal website!"
+      };
+    }
+  }).mount("#app");
+
+  Vue.createApp({
+    data() {
+      return {
+        manyFoods: [
+          "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+          "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+          "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+          "https://images.unsplash.com/photo-1504384308090-c894fdcc538d"
+        ]
+      };
+    }
+  }).mount("#app2");
+</script>
 
 </body>
 </html>
