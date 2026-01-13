@@ -11,6 +11,8 @@ export default {
     return {
       name: 'Apples',
       message: 'I like apples'
+      
+      
     }
   }
 };

@@ -1,12 +1,21 @@
 <template>
-  <h1>You did it!</h1>
+  <h1>You did it SF241 WEBPROG! YOU DID IT!</h1>
   <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
+    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the documentation
   </p>
+  
+  <FoodItem /> 
+  <FoodItem /> 
+  <FoodItem /> 
+  <FoodItem /> 
+  <FoodItem />
+  
 </template>
 
-<script></script>
+<script setup>
+  import FoodItem from './components/FoodItem.vue'
+  
+</script>
 
 <style>
  #app > div {
