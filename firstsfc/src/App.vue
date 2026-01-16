@@ -19,9 +19,11 @@
 </template>
 
 <script setup>
-    import FoodItem from './components/FoodItem.vue' </script>
-<script setup>
-  import FoodItem2 from './components/FoodItem2.vue' </script>
+    import FoodItem from './components/FoodItem.vue' 
+import FoodItem2 from './components/FoodItem2.vue'
+  
+</script>
+
 
 <style>
  
