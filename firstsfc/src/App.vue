@@ -13,8 +13,7 @@
 </template>
 
 <script setup>
-  import FoodItem from './components/FoodItem.vue'
-  import FoodItem from './components/FoodItem2.vue'
+  
   
 </script>
 
