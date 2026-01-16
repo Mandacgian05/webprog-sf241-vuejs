@@ -14,3 +14,4 @@ import { createApp } from "vue";
 import PersonalProfile from "./components/PersonalProfile.vue";
 
 createApp(PersonalProfile).mount("#app");
+
