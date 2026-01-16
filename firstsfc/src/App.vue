@@ -9,6 +9,12 @@
   <FoodItem /> 
   <FoodItem /> 
   <FoodItem />
+
+  <FoodItem2 /> 
+  <FoodItem2 /> 
+  <FoodItem2 /> 
+  <FoodItem2 /> 
+  <FoodItem2 />
   
 </template>
 
