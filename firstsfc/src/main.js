@@ -9,4 +9,4 @@ app.component('food-item', FoodItem)
 app.component('food-item2', FoodItem2)
 app.component('PersonalProfile', PersonalProfile)
 app.mount('#app')
-
+import "./components/PersonalProfile.css";
