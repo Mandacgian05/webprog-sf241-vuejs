@@ -21,6 +21,8 @@
 <script setup>
     import FoodItem from './components/FoodItem.vue' 
 import FoodItem2 from './components/FoodItem2.vue'
+  import PersonalProfile from "./components/PersonalProfile.vue";
+
   
 </script>
 
