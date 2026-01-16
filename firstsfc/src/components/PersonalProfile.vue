@@ -95,7 +95,7 @@
 </template>
 
 <script>
-import "./PersonalProfile.css";
+
 
 export default {
   name: "PersonalProfile",
@@ -132,4 +132,4 @@ export default {
   }
 };
 </script>
-<style src="./css/personalprofile.css"></style>
+<style> </style>
