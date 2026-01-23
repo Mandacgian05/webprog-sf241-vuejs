@@ -1,29 +1,21 @@
-<template>
-  <h1>Coffee!</h1>
-
-  <!-- Food Items -->
-  <FoodItem />
-  <FoodItem />
-  <FoodItem />
-  <FoodItem />
-  <FoodItem />
-
-  <FoodItem2 />
-  <FoodItem2 />
-  <FoodItem2 />
-  <FoodItem2 />
-  <FoodItem2 />
-
-  <!-- Personal Profile Section -->
-  <PersonalProfile />
-</template>
-
 <script setup>
-import FoodItem from './components/FoodItem.vue'
-import FoodItem2 from './components/FoodItem2.vue'
-import PersonalProfile from "./components/PersonalProfile.vue"
+import { ref, onMounted } from 'vue'
+import { supabase } from './lib/supabaseClient'
+
+const instruments = ref([])
+
+async function getInstruments() {
+  const { data } = await supabase.from('instruments').select()
+  instruments.value = data
+}
+
+onMounted(() => {
+   getInstruments()
+})
 </script>
 
-<style>
-/* Your styles here */
-</style>
+<template>
+  <ul>
+    <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
+  </ul>
+</template>
