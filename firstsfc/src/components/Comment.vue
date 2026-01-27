@@ -24,12 +24,12 @@ import { supabase } from '../lib/supabaseClient'
 const comments = ref([])
 
 async function getComments() {
-  const { data } = await supabase.from('comments').select()
+  const { data } = await supabase.from('comment').select()
   comments.value = data
 }
 
 onMounted(() => {
-  getComment()
+  getComments()
 })
 
 </script>
@@ -45,4 +45,5 @@ onMounted(() => {
   }
 
 </style>
+
 
