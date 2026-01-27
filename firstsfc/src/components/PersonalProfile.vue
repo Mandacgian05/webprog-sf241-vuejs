@@ -9,7 +9,6 @@
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#guestbook">Guestbook</a></li>
         <li><a href="#resources">Resources</a></li>
-        <li><a href="#food">Food Items</a></li>
       </ul>
       <button class="toggle-btn" @click="toggleTheme">
         {{ isDark ? 'Light Mode' : 'Dark Mode' }}
@@ -74,27 +73,6 @@
         </div>
       </section>
 
-      <!-- ✅ NEW SECTION FOR FOOD ITEMS -->
-      <section id="food">
-        <h2>Food Items</h2>
-
-        <div class="grid">
-          <FoodItem
-            v-for="(item, index) in foodItems"
-            :key="index"
-            :name="item.name"
-            :message="item.message"
-          />
-
-          <FoodItem2
-            v-for="(item, index) in foodItems2"
-            :key="index"
-            :name="item.name"
-            :message="item.message"
-          />
-        </div>
-      </section>
-
       <section id="resources">
         <h2>Resource Documentation</h2>
         <div class="card">
@@ -117,15 +95,10 @@
 </template>
 
 <script>
-import FoodItem from "./components/FoodItem.vue";
-import FoodItem2 from "./components/FoodItem2.vue";
+
 
 export default {
   name: "PersonalProfile",
-  components: {
-    FoodItem,
-    FoodItem2,
-  },
   data() {
     return {
       isDark: false,
@@ -140,15 +113,7 @@ export default {
         "https://picsum.photos/400/300?3"
       ],
       newComment: { name: "", message: "" },
-      comments: [],
-      foodItems: [
-        { name: "Coffee", message: "I like Cappucino" },
-        { name: "Pizza", message: "I like Pepperoni" }
-      ],
-      foodItems2: [
-        { name: "Pasta", message: "I like Carbonara" },
-        { name: "Burger", message: "I like Cheeseburger" }
-      ]
+      comments: []
     };
   },
   methods: {
@@ -167,7 +132,4 @@ export default {
   }
 };
 </script>
-
-<style>
-/* Your existing CSS here */
-</style>
+<style> </style> 
