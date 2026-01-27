@@ -21,7 +21,7 @@
 import { ref, onMounted } from 'vue'
 import { supabase } from '../lib/supabaseClient'
 
-const comment = ref([])
+const comments = ref([])
 
 async function getComments() {
   const { data } = await supabase.from('comments').select()
@@ -45,3 +45,4 @@ onMounted(() => {
   }
 
 </style>
+
