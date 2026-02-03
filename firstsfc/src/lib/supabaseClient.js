@@ -1,10 +1,10 @@
 import { createClient } from '@supabase/supabase-js'
 
+// These names must match your Vercel screenshot exactly
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-// MUST match your Vercel key name exactly
 const supabaseKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY 
 
-// This prevents the blank page crash if keys are missing
+// This prints the "Supabase keys are missing!" warning you see in your log
 if (!supabaseUrl || !supabaseKey) {
   console.error("Supabase keys are missing! Check Vercel Env Variables.")
 }
